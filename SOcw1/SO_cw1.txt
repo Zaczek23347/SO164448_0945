@@ -1,0 +1,62 @@
+SO cw1
+
+Polecenia:
+passwd		zmiana hasła
+
+man [polecenie] instrukcja polecenia
+
+who	 	Wypisuje informację o aktualnie zalogowanych użytkownikach.
+
+whoami		Wypisanie nazwy użytkownika związanego z aktualnym efektywnym
+		idetyfikatorem użytkownika. Działa jak id -un.
+ls		Wypisanie informacji o PLIKACH (domyślnie w katalogu bieżącym).
+
+pwd		Wypisanie ścieżki do bieżącego katalogu.
+
+tree		Wypisanie informacji o plikach oraz podkatalogach w formie drzewa
+
+ls -l 		Używa długiego formatu wyjściowego
+
+ls /		Wypisuje informacje o plikach w ścieżce
+
+
+cd		Przechodzi do pliku
+
+mkdir		Utworzenie KATALOGU/ÓW, jeżeli jeszcze nie istnieją.
+
+rmdir		Usuwanie pustych KATALOGÓW.
+
+rm		Kasowanie PLIKU/PLIKÓW.
+
+exit		Opuszczenie powłoki.
+
+
+Oznaczenia katalogów:
+
+bieżący /Katalog
+
+nadrzędny ..
+
+główny /
+
+domowy ~
+
+jakie elementy oznaczają poniższe symbole?
+
+- argument polecenia
+
+d wypisuje same katalogi, nie ich zawartość
+
+c sortuje katalogi
+
+b cytuje znaki niegraficzne w stylu języka C (ósemkowo)
+
+l używa długiego formatu wyjściowego
+
+Zadanie:
+
+mkdir Dane
+cd Dane
+cd ~
+ls /
+
