@@ -1,0 +1,163 @@
+SO cw2
+
+zad 1.
+
+s164448@orfi:~$ mkdir st_2023
+s164448@orfi:~$ cd st_2023
+s164448@orfi:~/st_2023$ mkdir Dane
+s164448@orfi:~/st_2023$ mkdir Teksty
+s164448@orfi:~/st_2023$ mkdir Programy
+s164448@orfi:~/st_2023$ cd Teksty
+s164448@orfi:~/st_2023/Teksty$ mkdir Listy
+s164448@orfi:~/st_2023/Teksty$ mkdir Podania
+s164448@orfi:~/st_2023/Teksty$ cd ..
+s164448@orfi:~/st_2023$ cd Programy
+s164448@orfi:~/st_2023/Programy$ mkdir C
+s164448@orfi:~/st_2023/Programy$ mkdir Shell
+s164448@orfi:~/st_2023/Programy$ cd Shell
+s164448@orfi:~/st_2023/Programy/Shell$ mkdir Skrypty
+s164448@orfi:~/st_2023/Programy/Shell$ cd ..
+s164448@orfi:~/st_2023/Programy$ cd ..
+s164448@orfi:~/st_2023$ tree
+.
+├── Dane
+├── Programy
+│   ├── C
+│   └── Shell
+│       └── Skrypty
+└── Teksty
+    ├── Listy
+    └── Podania
+
+8 directories, 0 files
+
+zad 2
+
+s164448@orfi:~/st_2023$ cd Teksty
+s164448@orfi:~/st_2023/Teksty$ nano Zestawienie.txt
+s164448@orfi:~/st_2023/Teksty$ cat Zestawienie.txt
+164448
+09.03.2023
+15:22
+pochmurnie
+s164448@orfi:~/st_2023/Teksty$ cd ..
+s164448@orfi:~/st_2023$ cp ./Teksty/Zestawienie.txt ./Programy/Shell/Skrypty/spis23.txt
+s164448@orfi:~/st_2023$ cd ./Programy/Shell/Skrypty
+s164448@orfi:~/st_2023/Programy/Shell/Skrypty$ ls
+spis23.txt
+s164448@orfi:~/st_2023/Programy/Shell/Skrypty$ cat spis23.txt
+164448
+09.03.2023
+15:22
+pochmurnie
+
+
+zad 3
+
+s164448@orfi:~/st_2023$ cd ./Teksty/Podania
+s164448@orfi:~/st_2023/Teksty/Podania$ ln -s ~/st_2023/Dane Odsylacz_Dane
+
+zad 4
+
+s164448@orfi:~/st_2023/Teksty/Podania$ ln -s ~/st_2023/Programy/Shell/Skrypty Skrypty_Odsylacz
+
+zad 5
+
+s164448@orfi:~/st_2023$ cd ./Teksty/Listy
+s164448@orfi:~/st_2023/Teksty/Listy$ ln -s ~/st_2023/Teksty/Zestawienie.txt DoZestawienia
+
+zad 6
+
+s164448@orfi:~/st_2023$ rm -R Programy
+
+zad 7
+
+s164448@orfi:~/st_2023/Teksty$ chmod 700 Listy
+s164448@orfi:~/st_2023/Teksty$ ls -l
+razem 12
+drwx------ 2 s164448 domain users 4096 03-09 15:33 Listy
+drwxr-xr-x 2 s164448 domain users 4096 03-09 15:31 Podania
+-rw-r--r-- 1 s164448 domain users   35 03-09 15:22 Zestawienie.txt
+s164448@orfi:~/st_2023/Teksty$ chmod 644 Zestawienie.txt
+s164448@orfi:~/st_2023/Teksty$ ls -l
+razem 12
+drwx------ 2 s164448 domain users 4096 03-09 15:33 Listy
+drwxr-xr-x 2 s164448 domain users 4096 03-09 15:31 Podania
+-rw-r--r-- 1 s164448 domain users   35 03-09 15:22 Zestawienie.txt
+s164448@orfi:~/st_2023/Teksty$ chmod 741 Zestawienie.txt
+s164448@orfi:~/st_2023/Teksty$ ls -l
+razem 12
+drwx------ 2 s164448 domain users 4096 03-09 15:33 Listy
+drwxr-xr-x 2 s164448 domain users 4096 03-09 15:31 Podania
+-rwxr----x 1 s164448 domain users   35 03-09 15:22 Zestawienie.txt
+
+zad8 
+s164448@orfi:~/st_2023$ cd Dane
+s164448@orfi:~/st_2023/Dane$ touch Zapis.txt
+s164448@orfi:~/st_2023/Dane$ ls
+Zapis.txt
+s164448@orfi:~/st_2023/Dane$ ls -l
+razem 0
+-rw-r--r-- 1 s164448 domain users 0 03-09 15:42 Zapis.txt
+
+właściciel: może zapisywać i czytać plik
+grupy: może tylko czytać
+reszta: może tylko czytać
+
+zad 9
+a)
+s164448@orfi:~/st_2023$ ls -l
+razem 8
+drwxr-xr-x 2 s164448 domain users 4096 03-09 15:42 Dane
+drwxr-xr-x 4 s164448 domain users 4096 03-09 15:23 Teksty
+s164448@orfi:~/st_2023$ mv Dane Dane1
+s164448@orfi:~/st_2023$ ls
+Dane1  Teksty
+s164448@orfi:~/st_2023$ chmod 776 Dane1
+s164448@orfi:~/st_2023$ ls -l
+razem 8
+drwxrwxrw- 2 s164448 domain users 4096 03-09 15:42 Dane1
+drwxr-xr-x 4 s164448 domain users 4096 03-09 15:23 Teksty
+s164448@orfi:~/st_2023$ rm -R Dane1
+
+b)
+s164448@orfi:~/st_2023$ mkdir Dane
+s164448@orfi:~/st_2023$ cd Dane
+s164448@orfi:~/st_2023/Dane$ nano test.txt
+s164448@orfi:~/st_2023/Dane$ cat test.txt
+wad
+s164448@orfi:~/st_2023/Dane$ mkdir miniDane
+s164448@orfi:~/st_2023/Dane$ cd ..
+s164448@orfi:~/st_2023$ cp ./Dane/test.txt ./Dane/miniDane/test2.txt
+s164448@orfi:~/st_2023$ tree
+.
+├── Dane
+│   ├── miniDane
+│   │   └── test2.txt
+│   └── test.txt
+└── Teksty
+    ├── Listy
+    │   └── DoZestawienia -> /home/domena/s164448/st_2023/Teksty/Zestawienie.txt
+    ├── Podania
+    │   ├── Odsylacz_Dane -> /home/domena/s164448/st_2023/Dane
+    │   └── Skrypty_Odsylacz -> /home/domena/s164448/st_2023/Programy/Shell/Skrypty
+    └── Zestawienie.txt
+
+6 directories, 5 files
+
+zad 10
+
+s164448@orfi:~/st_2023$ cd ..
+s164448@orfi:~$ umask 002
+
+
+
+
+
+
+
+
+
+
+
+
