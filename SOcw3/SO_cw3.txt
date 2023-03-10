@@ -1,0 +1,73 @@
+SO cw3
+
+zad 1
+
+s164448@orfi:~$ mkdir Notatki
+s164448@orfi:~$ mkdir Przepisy
+s164448@orfi:~$ cd Notatki
+s164448@orfi:~/Notatki$ mkdir Kopie
+s164448@orfi:~/Notatki$ nano Zapiski.txt
+s164448@orfi:~/Notatki$ cat Zapiski.txt
+10.03.2023
+katalog /dev:
+znajdujące się tutaj pliki nie są
+faktycznie plikami na dysku,
+lecz odnoszą się do urządzeń - za ich
+pośrednictwem system komunikuje się z urządzeniami
+
+zad 2
+
+s164448@orfi:~/Przepisy$ ln -s ~/Notatki/Zapiski.txt AdZapisek
+
+zad 3
+
+s164448@orfi:~$ chmod 744 Notatki
+s164448@orfi:~$ cd Notatki
+s164448@orfi:~/Notatki$ chmod 764 Zapiski.txt
+s164448@orfi:~/Notatki$ ls -l
+razem 8
+drwxrwx--- 2 s164448 domain users 4096 03-10 10:17 Kopie
+-rwxrw-r-- 1 s164448 domain users  187 03-10 10:31 Zapiski.txt
+s164448@orfi:~/Notatki$ cd ..
+s164448@orfi:~$ ls -l
+razem 20
+drwxr-xr-x 2 s164448 domain users 4096 02-24 10:53 Dane
+drwxr--r-- 3 s164448 domain users 4096 03-10 10:31 Notatki
+drwxr-xr-x 2 s164448 domain users 4096 03-10 10:34 Przepisy
+drwxr-xr-x 2 s164448 domain users 4096 02-24 10:09 public_html
+drwxr-xr-x 4 s164448 domain users 4096 03-09 15:50 st_2023
+
+zad 4
+
+s164448@orfi:~$ umask 0027
+
+zad 5
+
+s164448@orfi:~$ touch Dane.txt
+s164448@orfi:~$ mkdir Proba1
+s164448@orfi:~$ ls -l
+razem 24
+drwxr-xr-x 2 s164448 domain users 4096 02-24 10:53 Dane
+-rw-r----- 1 s164448 domain users    0 03-10 10:37 Dane.txt
+drwxr--r-- 3 s164448 domain users 4096 03-10 10:31 Notatki
+drwxr-x--- 2 s164448 domain users 4096 03-10 10:37 Proba1
+drwxr-xr-x 2 s164448 domain users 4096 03-10 10:34 Przepisy
+drwxr-xr-x 2 s164448 domain users 4096 02-24 10:09 public_html
+drwxr-xr-x 4 s164448 domain users 4096 03-09 15:50 st_2023
+
+zad 6
+
+s164448@orfi:~$ ls -i
+12322147 Dane      12845171 Notatki  12845176 Przepisy     12583426 st_2023
+12322720 Dane.txt  12583152 Proba1   12322039 public_html
+
+zad 7
+
+Aby odczytać zawartość pliku dane1 w katalogu Dane System operacyjny musi:
+znaleźć katalog nadrzędny Dane
+Przejść do katalogu Dane
+znaleźć plik dane1
+otworzyć plik dane1 w trybie odczytu
+odczytać zawartość pliku dane1
+zamknąć plik dane1
+

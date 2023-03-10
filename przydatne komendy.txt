@@ -1,0 +1,207 @@
+
+2.4.1 Najważniejsze polecenia
+
+ls
+
+    wyświetla zawartość katalogu
+    Postać: ls [opcje] [plik…]
+    Przykład:
+    $ ls
+    wyświetli zawartość bieżącego katalogu
+    $ ls /bin
+    wyświetli listę plików w katalogu /bin
+    Polecenie ls może być uruchamiane z wieloma parametrami (zobacz man ls).
+    Najczęściej używanymi są:
+    -l wyświetla dokładne informacje o plikach (rodzaj pliku, uprawnienia, nazwę właściciela grupę, rozmiar, datę modyfikacji)
+    -a wyświetla wszystkie pliki, także pliki ukryte (ich nazwa zaczyna się od kropki)
+    -s wyświetla dodatkowo rozmiar plików
+    -R rekurencyjne wyświetlanie zawartości katalogów (wraz z podkatalogami)
+    -d wyświetla katalogi a nie ich zawartość
+    -t posortowanie wyniku według czasu modyfikacji pliku
+    -S posortowanie wyniku według rozmiaru plików
+    -r odwrócenie kolejności sortowania
+    -i wyświetla numer i-węzła plików
+    Przykład:
+    $ ls -la /etc /home
+    wyświetli dokładną informację o wszystkich plikach w katalogach /etc i /home
+mkdir
+
+    tworzy katalog
+    Postać: mkdir [-p] katalog…
+    Przykład:
+    $ mkdir nowykatalog
+    utworzy katalog o nazwie nowykatalog
+    Najważniejsze opcje:
+    -p pozwala tworzyć ”gałęzie” katalogów
+    Przykład:
+    $ mkdir -p kat1/kat2/kat3/kat4
+    utworzy cztery puste katalogi (jeden wewnątrz drugiego)
+rmdir
+
+    usuwa puste katalogi
+    Postać: rmdir [-p] katalog…
+    Przykład:
+    $ rmdir nowykatalog
+    usunie pusty katalog o nazwie nowykatalog
+    Przykład:
+    $ rmdir -p kat1/kat2/kat3/kat4
+    usunie całą ”gałąź” pustych katalogów
+cd
+
+    zmienia bieżący katalog
+    Postać: cd [katalog]
+    Przykład:
+    $ cd /usr/bin
+    spowoduje przejście do katalogu /usr/bin
+    $ cd ∼
+    spowoduje powrót do katalogu domowego
+    $ cd ..
+    przejście do katalogu położonego wyżej
+    $ cd -
+    powrót do ostanio odwiedzonego katalogu
+    $ cd
+    powrót do katalogu domowego
+rm
+
+    usuwa pliki
+    Postać: rm [opcje] plik…
+    Przykład:
+    $ rm dane.txt
+    usunie plik o nazwie dane.txt
+    $ rm *.txt
+    usunie wszystkie pliki z rozszerzeniem .txt
+    Najważniejsze opcje:
+    -f nie pytaj o potwierdzenie podczas usuwania
+    -r usuń rekurencyjnie, przydatne przy usuwaniu katalogów wraz z zawartością
+    -i pytaj o potwiedzenie przy usuwaniu każdeg pliku
+    Przykład:
+    $ rm -fr katalog
+    usunie cały katalog
+cp
+
+    kopiuje pliki i katalogi
+    Postać:
+    cp plik1 plik2
+    cp plik... katalog
+    cp -r katalog1... katalog2
+    Przykład:
+    $ cp /etc/passwd ∼/kopia_dane.txt
+    tworzy kopię pliku /etc/passwd o nazwie kopia_dane.txt w katalogu domowym użytkownika
+    $ cp * jakis_katalog/
+    stworzy kopie plików z bieżącego katalogu w katalogu jakis_katalog (katalog docelowy musi istnieć)
+    $ cp /etc/hosts .
+    skopiuje plik hosts z katalogu /etc do bieżącego katalogu
+    Najważniejsze opcje:
+    -r kopiowanie rekurencyjne, pozwala kopiować katalogi z całą zawartością
+    Przykład:
+    $ cp -r /usr/src .
+    kopiuje katalog /usr/src do bieżącego katlogu
+    $ cp -r /usr/src nowy_katalog
+    kopiuje katalog /usr/src do bieżącego katlogu zmieniając jego nazwę na nowy_katalog
+mv
+
+    przenosi pliki
+    Postać:
+    mv plik1 plik2
+    mv plik… katalog
+    Przykład:
+    $ mv dane.txt nowedane.txt
+    zmienia nazwę pliku dane.txt na nowedane.txt
+    $ mv *.c programy/
+    przeniesie wszystkie pliki z bieżącego katalogu posiadające rozszerzenie *.c do katalogu programy
+pwd
+
+    wyświetla bieżący katalog
+    Postać: pwd
+    Przykład:
+    $ pwd
+
+    /home/student
+    Opcja -P powoduje wypisanie bieżącego katalogu z pominięciem dowiązań symbolicznych.
+ln
+
+    tworzy dowiązanie (sztywne lub symboliczne) do plików
+    Postać:
+    ln [opcje] plik nazwa_dowiazania
+    ln [opcje] plik... katalog
+    Przykład:
+    $ ln dane.txt lndane.txt
+    tworzy dowiązanie sztywne do pliku dane.txt o nazwie lndane.txt
+    $ ln /etc/* tmp/
+    tworzy dowiązania sztywne w katalogu tmp dla wszystkich plików z katalogu /etc
+    Uwaga: każdy plik istnieje dopóki nie usuniemy wszystkich jego dowiązań. Najważniejsze opcje polecenia ln:
+    -s tworzy dowiązanie symboliczne. W przeciwieństwie do dowiązania sztywnego dowiązanie symboliczne może być tworzone dla katalogów oraz dla plików położonych w obrębie innego systemu plików.
+
+    O liczbie dowiązań do pliku informuje wynik polecenia ls -l (druga kolumna).
+    $ ln -s /etc etc_link
+    $ ln /etc/passwd passwd_link
+    $ ls -l
+
+    lrwxrwxrwx 1 student stud   5 03-06 20:14 etc_link -> /etc/
+    -rw-r--r-- 2 student stud 465 2009-04-02  passwd_link
+
+touch
+
+    zmienia datę modyfikacji pliku lub tworzy pusty plik
+    Postać: touch [opcje] plik…
+    Przykład:
+    $ touch nowyplik
+
+file
+
+    wyświetla informację o zawartości pliku
+    Postać: file [opcje] plik…
+    Przykład:
+
+    $ file main.c index.html /etc/hosts
+    main.c:     ASCII C program text
+    index.html: HTML document text
+    /etc/hosts: ASCII text
+
+du
+
+    wyświetla rozmiar zajętej przestrzeni dyskowej
+    Postać: du [opcje] plik…
+    Najważniejsze opcje:
+    -b w bajtach
+    -k w kilobajtach
+    -m w megabajtach
+    -h w czytelnej formie
+    -s tylko objętość całkowita dla każdego argumentu
+    -c podsumowanie dla wszystkich plików
+    Przykład:
+    $ du -ms dokumenty
+    wyświetli zajętość w megabajtach katalogu dokumenty
+    $ du -h -s -c *
+    wyświetli rozmiar wszystkich plików i katalogów w bieżącym katalogu w czytelnej postaci oraz z podsumowaniem.
+
+    Inne przydatne polecenia: stat, mkfifo, lsof, shred, mknod, dd, find, rename
+
+2.4.2 Znaki specjalne powłoki - dopasowanie nazw plików
+
+*
+
+    dopasowanie dowolnego ciągu znaków
+?
+
+    dopasowanie pojedynczego znaku
+[lista
+
+    ] dopasowanie jednego ze znaków z podanej listy
+[^lista
+
+    ] dopasowanie jednego znaku nie należącego do listy
+{ciag1,ciag2,…}
+
+    rozwinięcie napisu z użyciem wszystkich kombinacji ciągów znaków
+
+Przykłady:
+$ ls *.txt
+$ cp /etc/p*d ∼
+$ rm plik?.txt
+$ ls /etc/[abc]*
+$ ls /bin/*[a-g]
+$ rm *.[^a-z]
+$ mkdir katalog_{1,2,3}
+$ rmdir plik_[1-4]
+$ echo {Ala,Ula,Ola}" ma "{psa,kota,rybkę}.
