@@ -71,3 +71,28 @@ otworzyć plik dane1 w trybie odczytu
 odczytać zawartość pliku dane1
 zamknąć plik dane1
 
+PLIK_LSEEK
+
+zad 1
+
+s164448@orfi:~$ ls
+a.out  dane.txt  Notatki       Proba1    public_html
+Dane   Dane.txt  plik_lseek.c  Przepisy  st_2023
+
+zad 2 
+
+
+s164448@orfi:~$ nano plik_lseek.c
+
+ ilosc=read(plik1,wyraz,20);
+ printf("Odczytano %d znakow\n", ilosc);
+ printf("Odczytane: %s\n",wyraz);
+ }while(ilosc!=0);
+ lseek(plik1,-20L,2);
+ ilosc=read(plik1,wyraz,20);
+ printf("Ostatni Odczyt - po lseek: %d znakow\n", ilosc);
+ printf("Odczytane: %s\n",wyraz);
+ printf("To zapis o psie Ali\n");               <--------------------
+ close(plik1);
+ printf("Aby zakonczyc Wpisz liczbe:");
+ scanf("%d",&a);
