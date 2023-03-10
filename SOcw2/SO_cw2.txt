@@ -148,15 +148,7 @@ s164448@orfi:~/st_2023$ tree
 zad 10
 
 s164448@orfi:~/st_2023$ cd ..
-s164448@orfi:~$ umask 002
-
-
-
-
-
-
-
-
+s164448@orfi:~$ umask 117
 
 
 
