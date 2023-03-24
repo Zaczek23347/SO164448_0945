@@ -1,0 +1,17 @@
+zad 1
+s164448@orfi:~$ mc
+F7 UtwKat
+tworzymy katalog DANE22
+
+zad 2
+wchodzimy w prawym okienku do katalogu DANE22 i kopiujemy wszstkie pliki z lewego(domowego) F5 Kopiuj
+
+zad 3
+
+klikamy na górze opcję Prawy i wybieramy Drzewo
+
+
+zad 4
+
+wybieramy plik do usunięcia
+F8 Usuń

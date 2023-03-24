@@ -1,0 +1,70 @@
+zad 1
+s164448@orfi:~/cw5$ nano
+s164448@orfi:~/cw5$ ls
+tekst24.03.txt
+s164448@orfi:~/cw5$ cat tekst24.03.txt
+kawa i herbata ala
+aallaan ***
+ela,jola, tola i allibaba
+kot \i pies\ ali
+ala 4-2=2
+alla: 4*5=20
+allo alo, tola i ala
+pies aalli alli
+aalllaaa tollla
+ alla 4+3=7 ala
+ ola i ala
+  ala
+
+zad 2
+
+a)
+s164448@orfi:~/cw5$ grep -b "^ala" *
+74:ala 4-2=2
+
+b)
+s164448@orfi:~/cw5$ grep -b "tola i ala$" *
+97:allo alo, tola i ala
+
+c)
+s164448@orfi:~/cw5$ grep -b "[ala]" *
+0:kawa i herbata ala
+19:aallaan ***
+31:ela,jola, tola i allibaba
+57:kot \i pies\ ali
+74:ala 4-2=2
+84:alla: 4*5=20
+97:allo alo, tola i ala
+118:pies aalli alli
+134:aalllaaa tollla
+150: alla 4+3=7 ala
+166: ola i ala
+177:  ala
+
+d)
+s164448@orfi:~/cw5$ grep -b ".l*." *
+0:kawa i herbata ala
+19:aallaan ***
+31:ela,jola, tola i allibaba
+57:kot \i pies\ ali
+74:ala 4-2=2
+84:alla: 4*5=20
+97:allo alo, tola i ala
+118:pies aalli alli
+134:aalllaaa tollla
+150: alla 4+3=7 ala
+166: ola i ala
+177:  ala
+
+e)
+s164448@orfi:~/cw5$ grep -b "^ala\|^alla\|^ *ala\|^ *alla" *
+74:ala 4-2=2
+84:alla: 4*5=20
+150: alla 4+3=7 ala
+177:  ala
+
+f)
+s164448@orfi:~/cw5$ grep -b "o," *
+97:allo alo, tola i ala
+
+g)
