@@ -1,0 +1,49 @@
+zad 1
+
+s164448@orfi:~$ a=10
+s164448@orfi:~$ b=5
+s164448@orfi:~$ if [ $a > $b ]
+> then echo a jest wieksze
+> else echo b jest wieksze
+> fi
+a jest wieksze
+
+
+zad 2
+
+s164448@orfi:~$ if [ ~/dane.txt ]
+> then echo ok
+> fi
+ok
+
+zad 3
+
+s164448@orfi:~$ tekst="tekst niezoerowy"
+s164448@orfi:~$ if [ tekst ]
+> then echo niezerowy
+> else echo zerowy
+> fi
+niezerowy
+
+zad 4
+
+s164448@orfi:~$ if [ $PWD = $HOME ]
+> then echo tak
+> else echo nie
+> fi
+tak
+
+CW 6 CD
+
+zad 1
+
+s164448@orfi:~$ case "$tekst" in
+> lista) ls;;
+> drzewo) tree;;
+> las) tree;;
+> "gdzie ja jestem") pwd;;
+> *) echo inna opcja 164448
+> esac
+
+zad 2
+
